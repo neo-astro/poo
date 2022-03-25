@@ -1,0 +1,8 @@
+.checkbox{
+    position: absolute;
+}
+
+.checkbox:checked >body ~ div{
+    background-color: rgb(189, 60, 60);
+}
+
