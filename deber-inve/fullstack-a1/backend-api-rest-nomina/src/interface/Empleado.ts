@@ -7,7 +7,7 @@ export interface Iempleado {
   estado: number;
   created_at: Date;
   sueldo: number;
-  cargo: number;
-  departamento:number; 
+  idcargo: number;
+  iddepartamento:number; 
 
 }

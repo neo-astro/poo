@@ -36,6 +36,8 @@ d.addEventListener("click", async (e) => {
     let $estado = d.getElementById("activo").checked;
     let $sueldo= d.getElementById("sueldo").value;
     let $cedula= d.getElementById("cedula").value;
+    let $cargo = d.getElementById("opciones-cargo").value
+    let $departamento = d.getElementById("opciones-departamento").value
     
 
     
@@ -51,10 +53,10 @@ d.addEventListener("click", async (e) => {
         // let $cedula= d.getElementById("cedula").value;
     
 
-        let idcargo = lista_cargos.filter(cargo => cargo.descripcion = d.getElementById("opciones-cargo").value )[0].idcargo
+        let idcargo = lista_cargos.filter(cargo => cargo.descripcion == $cargo )[0].idcargo
         console.log("id cargo",idcargo);
         
-        let iddepartamento = lista_departamentos.filter(departamento  => departamento.descripcion = d.getElementById("opciones-departamento").value )[0].iddepartamento
+        let iddepartamento = lista_departamentos.filter(departamento  => departamento.descripcion == $departamento)[0].iddepartamento
         console.log("id departamento",iddepartamento);
 
         let id = Date.now();
@@ -62,7 +64,7 @@ d.addEventListener("click", async (e) => {
         const empleadoJson = JSON.stringify(empleado);
         const res = await serEmpleado.insertarDatos(empleadoJson);
       } else {//opcione actualizar
-
+        //debo obtener el id de cargo y de deparatmento 
         let $descrip = d.getElementById("descripcion").value;
         let $estado = d.getElementById("activo").checked;
         let $sueldo= d.getElementById("sueldo").value;
@@ -70,19 +72,19 @@ d.addEventListener("click", async (e) => {
         let $cargo = d.getElementById("opciones-cargo").value
         let $departamento = d.getElementById("opciones-departamento").value
 
-        // [{cargo},{cargo}]
-        let idcargo = lista_cargos.filter(cargo => cargo.descripcion = $cargo )[1].idcargo
         
-        let iddepartamento = lista_departamentos.filter(departamento  => departamento.descripcion =$departamento )[1].iddepartamento
+        let idcargo = lista_cargos.filter(cargo => cargo.descripcion == $cargo )[0].idcargo
+        
+        let id_departamento = lista_departamentos.filter(departamento  => departamento.descripcion ==$departamento )[0].iddepartamento
         
         console.log("la lista de cargo al actualizar", lista_cargos.filter(cargo => cargo.descripcion ));
         console.log("la lista de depars al actualizar", lista_departamentos.filter(departamento=> departamento.descripcion ));
         console.log("la opcion de cargos para actualizar",$cargo);
         console.log("la opcion de depar para actualizar",$departamento);
         console.log("id cargo",idcargo);
-        console.log("id departamento",iddepartamento);
+        console.log("id departamento",id_departamento);
         let id = serEmpleado.id;
-        const empleado = {  descripcion: $descrip, estado: $estado,sueldo: $sueldo,idcargo: idcargo,iddepartamento: iddepartamento,cedula: $cedula };
+        const empleado = {descripcion: $descrip, estado: $estado,sueldo: $sueldo,idcargo: idcargo,iddepartamento: id_departamento,cedula: $cedula };
         const EmpleadoModJson = JSON.stringify(empleado);
         const res = await serEmpleado.modificarDatos(EmpleadoModJson, serEmpleado.id);
         //mostrar mensaje 

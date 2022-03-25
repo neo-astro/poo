@@ -51,6 +51,7 @@ export async function deleteEmpleado(req: Request, res: Response) {
 export async function updateEmpleado(req: Request, res: Response) {
   const id = req.params.empleadoId;
   const modEmpleado: Iempleado = req.body;
+  console.log("info que viaja al put",modEmpleado);
   const conn = await conection.getConneccion();
   await conn.query("UPDATE empleado set ? WHERE idempleado = ?", [modEmpleado, id]);
   res.json({
