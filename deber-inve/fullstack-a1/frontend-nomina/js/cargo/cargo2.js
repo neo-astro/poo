@@ -5,8 +5,18 @@ import {
 const serCargo = new Cargo();
 const d = document;
 const $formCargo = d.getElementById("form-cargo");
-const $enviar = d.getElementById("enviar");
 
+
+
+/*
+oninvalid = "
+setCustomValidity(`Verifica los datos`)
+" onchange="
+try {
+    setCustomValidity('')
+} catch (e) {}
+"
+*/
 
 d.addEventListener("DOMContentLoaded", ()=>{
     
@@ -15,7 +25,7 @@ d.addEventListener("DOMContentLoaded", ()=>{
         d.addEventListener("submit", async (e) => {
             e.preventDefault();
             console.log("se envio", e.target);
-
+            
 
             let $descrip = d.getElementById("descripcion").value;
             let $estado = d.getElementById("activo").checked;
