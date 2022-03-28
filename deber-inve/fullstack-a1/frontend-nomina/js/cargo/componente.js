@@ -71,7 +71,7 @@ export class Cargo {
     .then(async (empleados) =>{
       let idcargo_empleado = empleados.filter(empleado => empleado.idcargo == id)
       if (idcargo_empleado.length > 0) {
-        alert("Este cargo no se puede eliminar\nExisten empleados asignados a este cargo")
+        alert("ADVERTENCIA\NEste cargo no se puede eliminar,existen empleados asignados a este cargo")
       } else {
         await fetch(`${this.url}/${id}`, {method: "delete"});
         this.obtenerCargos();

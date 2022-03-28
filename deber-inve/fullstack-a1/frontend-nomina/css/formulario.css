@@ -3,16 +3,16 @@
   width: 760px;
   max-width: 100%;
   min-width: 240px;
-  background-color: var(--boton-secundary);
-  border-radius: 10px;
-  box-shadow: 0px 5px 16px 0px var(--primary-color);
+  background-color: rgba(44, 44, 44, 0.89)  ;
+  border-radius: 20px;
+  box-shadow: 0px 5px 16px 0px rgba(151, 150, 150, 0.89);
   overflow: hidden;
   color: var(--font-color-reverse);
   font-weight: 900;
   margin: 0 auto;
 }
 .form-header {
-  background: var(--primary-color);
+  background: rgb(0, 0, 0);
   padding: 1px;
   text-align: center;
   border-bottom: 5px solid var(--font-color-reverse);
@@ -46,7 +46,7 @@
   display: block;
   width: 100%;
   padding: 8px;
-  background: var(--boton-success);
+  background: #FFF;
   border-radius: 10px;
   color: var(--primary-color);
   cursor: pointer;
@@ -56,8 +56,8 @@
   transition: background-color 0.5s ease-in-out;
 }
 .form button:hover {
-  background-color: var(--primary-color);
-  color:var(--font-color-reverse)
+  background-color: rgb(28, 153, 80);
+  color: #FFF
 }
 
 .table-responsive {

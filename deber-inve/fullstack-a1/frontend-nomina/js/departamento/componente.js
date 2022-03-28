@@ -67,7 +67,7 @@ export class Departamento {
     .then(async(empleados) =>{
       let idcargo_empleado = empleados.filter(empleado => empleado.iddepartamento == id)
       if (idcargo_empleado.length > 0) {
-        alert("Este departamento no se puede eliminar\nExisten empleados asignados a este departamento")
+        alert("ADVERTENCIA\nEste departamento no se puede eliminar, existen empleados asignados a este departamento")
       }else {
         await fetch(`${this.url}/${id}`, {
           method: "delete"

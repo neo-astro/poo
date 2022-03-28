@@ -41,3 +41,13 @@ a{
 li{
   list-style:none;
 }
+
+
+.opcion_header:hover{
+  color: rgb(44, 192, 56);
+}
+
+.consulta-est,
+.consulta-empleados {
+  background-color: rgb(0, 0, 0)
+}

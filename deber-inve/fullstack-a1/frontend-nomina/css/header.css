@@ -1,11 +1,15 @@
 /* estilos del header o encabezado */
+body {
+  background-color: rgba(0, 0, 0, 0.788)
+}
 .header {
-  background-color: var(--primary-color);
+  background-color: rgba(0, 0, 0, 0.835);
   position: fixed;
   width: 100%;
+  height: 50px;
   top: 0;
   left: 0;
-  border-radius: 5px;
+  border-radius: 1px;
   z-index: 2;
 }
 .navegacion {
