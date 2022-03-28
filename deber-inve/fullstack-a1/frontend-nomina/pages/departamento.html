@@ -39,8 +39,8 @@
       <form id="form-departamento" class="form">
         <div class="form-group">
           <label for="descripcion">Descripcion</label>
-          <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion departamento"
-            title="El departamento solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñáéíóú\s]+$" required value="" />
+          <input type="text" class="input" name="descripcion" id="descripcion" placeholder="Descripcion departamento"
+            title="El departamento solo acepta letras y espacios en blanco" pattern="^[A-zÑñáéíóú]+((\s[A-zÑñáéíóú]+)?)+$" required/>
         </div>
         <div class="form-check">
           <label>Activo

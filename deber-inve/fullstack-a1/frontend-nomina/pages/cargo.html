@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/formulario.css">
-  <script defer src="../js/cargo/cargo.js" type="module"></script>
+  <script defer src="../js/cargo/cargo2.js" type="module"></script>
   <title>Cargo</title>
 </head>
 
@@ -38,8 +38,8 @@
       <form id="form-cargo" class="form">
         <div class="form-group">
           <label for="nombre">Descripcion</label>
-          <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion del cargo"
-            title="El cargo solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñáéíóú\s]+$" required value="" />
+          <input type="text"  class="input" name="descripcion" id="descripcion" placeholder="Descripcion del cargo"
+            title="El cargo solo acepta letras y espacios en blanco" pattern="^[A-zÑñáéíóú]+((\s[A-zÑñáéíóú]+)?)+$"  required />
         </div>
         <div class="form-check">
           <label>Activo

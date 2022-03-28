@@ -76,6 +76,7 @@ function updateEmpleado(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const id = req.params.empleadoId;
         const modEmpleado = req.body;
+        console.log("info que viaja al put", modEmpleado);
         const conn = yield conection.getConneccion();
         yield conn.query("UPDATE empleado set ? WHERE idempleado = ?", [modEmpleado, id]);
         res.json({

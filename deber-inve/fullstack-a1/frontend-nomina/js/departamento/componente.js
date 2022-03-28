@@ -62,8 +62,18 @@ export class Departamento {
   }
 
   async eliminarDepartamento(id) {
-    const res = await fetch(`${this.url}/${id}`, { method: "delete" });
-    this.obtenerDepartamentos();
+    fetch("http://localhost:3000/empleados")
+    .then((e) => e.json())
+    .then(async(empleados) =>{
+      let idcargo_empleado = empleados.filter(empleado => empleado.iddepartamento == id)
+      if (idcargo_empleado.length > 0) {
+        alert("Este departamento no se puede eliminar\nExisten empleados asignados a este departamento")
+      }else {
+        await fetch(`${this.url}/${id}`, {
+          method: "delete"
+        });
+        this.obtenerDepartamentos()}
+    })
   }
   // insertar un nuevo cargo
   async insertarDatos(departamento) {

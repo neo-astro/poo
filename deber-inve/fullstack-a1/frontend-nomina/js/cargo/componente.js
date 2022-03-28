@@ -4,6 +4,7 @@ export class Cargo {
     this.id = "";
     this.grabar = true;
     this.url = "http://localhost:3000/cargos";
+   
   }
 
   obtenerCargos() {
@@ -38,6 +39,8 @@ export class Cargo {
            await this.eliminarCargo(e.target.dataset.id);
          });
        });
+
+
        // editar
        const $btnsEdit = document.querySelectorAll(".btn-edit");
        $btnsEdit.forEach((btn) => {
@@ -63,8 +66,18 @@ export class Cargo {
   }
 
   async eliminarCargo(id) {
-    const res = await fetch(`${this.url}/${id}`, { method: "delete" });
-    this.obtenerCargos();
+    fetch("http://localhost:3000/empleados")
+    .then((e)=> e.json())
+    .then(async (empleados) =>{
+      let idcargo_empleado = empleados.filter(empleado => empleado.idcargo == id)
+      if (idcargo_empleado.length > 0) {
+        alert("Este cargo no se puede eliminar\nExisten empleados asignados a este cargo")
+      } else {
+        await fetch(`${this.url}/${id}`, {method: "delete"});
+        this.obtenerCargos();
+      }
+    })
+    
   }
   // insertar un nuevo cargo
   async insertarDatos(cargo) {
