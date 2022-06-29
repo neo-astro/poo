@@ -10,6 +10,7 @@ const $formEmpleado = d.getElementById("form-empleado");
 
 d.addEventListener("DOMContentLoaded",()=>{
   serEmpleado.obtenerEmpleados()
+  
   d.addEventListener("submit",async(e)=>{
     e.preventDefault();
     //decodificar el id de cargo y empleado 
